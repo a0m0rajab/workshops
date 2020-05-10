@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Remote control bot</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="perso">
+    <div class="eve">
+      <div class="head">
+	<div class="face"></div>
+      </div>
+      <div class="body">
+	<div class="headshadow"></div>
+      </div>
+    </div>
+    <div class="shadow"></div>
+</div>
+
+
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script  src="./script.js"></script>
+<script>
+  var left= function(){
+    $('.perso').animate({
+	    left: '-=60'});
+}
+let right= function(){
+    $('.perso').animate({
+	    left: '+=60'});
+}
+let moveTop = function(){
+    $('.perso').animate({
+    top: '-=60'
+})}
+let down = function(){
+    $('.perso').animate({
+    top: '+=60'
+})}
+</script>
+</body>
+</html>
