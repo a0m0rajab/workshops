@@ -1,0 +1,12 @@
+body {
+    direction: rtl;
+}
+
+.katex-display {
+    direction: ltr;
+}
+
+html body table {
+    padding: 0 30vw !important;
+    width: inherit !important;
+}
