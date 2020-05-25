@@ -2,4 +2,14 @@ Add links of robot and the extras to the main file
 read the functions before the workshop
 fix extras HTML file 
 ADD md files to the workshop 
-write how you generated them 
+write how you generated them the workshop files
+
+How did i make the file: 
+i wrote the workshop based on the EJS syntax
+created the file, then tried to solve the problems that occured 
+which lead me to have to add the CSS/JS files to the index
+and then add the empty page to let the code mirror file works well 
+at the same time i have checked the persian version of EJS for some help 
+then wrote the CSS based on my needs 
+
+for the math, i used the vscode extension to generate my HTML file and then added it manually to EJS genereted HTML file
