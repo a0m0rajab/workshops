@@ -9,7 +9,7 @@ let countDown = new Date(2020, 05, 06, 18).getTime(),
 
     let now = new Date().getTime(),
       distance = countDown - now;
-      showTime = new Date(2020, 05, 06, 17, 40).getTime() - now;
+      showTime = new Date(2020, 6, 26, 16, 40).getTime() - now;
 
     if (showTime <= 0) {
       document.getElementById('workshopLink').hidden = false;
