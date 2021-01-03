@@ -7,6 +7,34 @@
 
 quote}}
 
+- [دورة برمجة مكثفة بالجافاسكربت](#دورة-برمجة-مكثفة-بالجافاسكربت)
+  - [الطباعة على الشاشة](#الطباعة-على-الشاشة)
+  - [المعرفات](#المعرفات)
+    - [أنواع المعرفات](#أنواع-المعرفات)
+  - [الرياضيات](#الرياضيات)
+  - [إشارات التعريف](#إشارات-التعريف)
+  - [تصاعد وتنازل](#تصاعد-وتنازل)
+  - [أنواع_البيانات](#أنواع_البيانات)
+    - [النصوص](#النصوص)
+  - [المتحكمات](#المتحكمات)
+    - [مقارنات رياضية](#مقارنات-رياضية)
+    - [اختصار المقارنة](#اختصار-المقارنة)
+    - [منطقية](#منطقية)
+    - [ثنائية](#ثنائية)
+    - [اختيار مفتاحي](#اختيار-مفتاحي)
+  - [الحلقات](#الحلقات)
+  - [الدوال](#الدوال)
+  - [أنماط برمجية](#أنماط-برمجية)
+  - [مصفوفات](#مصفوفات)
+    - [مثال السوق](#مثال-السوق)
+  - [مكتبات جاهزة](#مكتبات-جاهزة)
+  - [الرياضيات](#الرياضيات-1)
+  - [الصفوف](#الصفوف)
+  - [تدريب](#تدريب)
+    - [رسم مثلث](#رسم-مثلث)
+  - [مراجعة الأخطاء وأنواعها](#مراجعة-الأخطاء-وأنواعها)
+  - [بعض الإضافات](#بعض-الإضافات)
+
 ## الطباعة على الشاشة
 
 ```
@@ -30,6 +58,12 @@ z =  y + y
 ### أنواع المعرفات
 
 ```
+let 
+var
+const
+```
+
+```
 const x = 10; 
 const y = 14;
 x = 11;
@@ -49,22 +83,92 @@ var x = 10
 var y = 20 
 console.log(x*y)
 ```
+## الرياضيات 
+
+
+```
++
+-
+/
+*
+%
+**
+```
+
+```
+console.log(1+2)
+console.log(4*5)
+```
+
+```
+console.log()
+```
+
+## إشارات التعريف
+
+```
+=
+*=
+/=
+%=
++=
+-=
+```
+
+منطقية 
+
+```
+<<=
+>>=
+&= و
+^= عدم تطابق
+|= أو
+```
+
+هياكل بيانات
+```
+[a, b] = [1, 2]
+{a, b} = {a:1, b:2}
+```
+
+## تصاعد وتنازل
+
+```
+A++
+A--
+++A
+--A
+```
+
+```
+let x = 0
+console.log(x)
+console.log(x++)
+console.log(++x)
+```
+
 
 ## أنواع_البيانات
 
 ```
 undefined 
 Boolean // True, False  
-String 
-BigInt  
+String   
 Object
 Function
 Null    
 ```
 
+التغيير بين الأنواع
+ميزات كل نوع
+
 ```
 Number // -(2^53 − 1) and 2^53 − 1).
 +Infinity, -Infinity, and NaN
+```
+
+```
+BigInt
 ```
 
 ```
@@ -88,12 +192,22 @@ console.log(x+y+z)
 ### النصوص
 
 ```
-const string1 = "A string primitive";
-const string2 = 'Also a string primitive';
-const string3 = `Yet another string primitive`;
+const string1 = "A string";
+const string2 = 'Also a string';
+const string3 = `another string`;
+```
+
+```
+const string1 = `${1+2} = 3 , 1+1 = 2`;
 ```
 
 ## المتحكمات
+
+```
+if
+ifelse 
+switch
+```
 
 ### مقارنات رياضية
 
@@ -105,6 +219,11 @@ const string3 = `Yet another string primitive`;
 ==
 !=
 ```
+
+```
+console.log(1 < 3 )
+```
+
 
 ```
 let x= 2, y= 4;
@@ -146,6 +265,17 @@ console.log(a)
 ||
 ```
 
+```
+let x= (false&&true&&false)
+console.log(x)
+```
+
+```
+true,true
+false,false
+true,false
+```
+
 ### ثنائية
 
 ```
@@ -153,6 +283,8 @@ console.log(a)
 |
 ^
 ```
+
+الأعداد الثنائية
 
 ### اختيار مفتاحي
 
@@ -167,6 +299,40 @@ swtich(){
     default:
 }
 ```
+
+
+## الحلقات
+
+```
+let result =0;
+for(let i=5; i< 20; i=i+1){
+    result = i + result;
+}
+console.log(result)
+
+let x=5
+let result1=0;
+while(x < 20 ){
+    console.log(x)
+    x=x+5;
+}
+
+for(let i=0; i< 10; i++){
+    console.log(i)
+}
+```
+
+```
+break
+continue
+```
+
+```
+do{}while()
+for(let i = 0 ; i < 10 ; i ++ ){}
+while
+```
+
 
 ## الدوال
 
@@ -205,72 +371,6 @@ AsyncGenerator
 AsyncFunction
 Promise
 ```
-## Assignments
-
-```
-=
-*=
-/=
-%=
-+=
--=
-<<=
->>=
->>>=
-&=
-^=
-|=
-[a, b] = [1, 2]
-{a, b} = {a:1, b:2}
-```
-
-# Increment & decrement
-
-```
-A++
-A--
-++A
---A
-```
-
-## الحلقات
-
-```
-let result =0;
-for(let i=5; i< 20; i=i+1){
-    result = i + result;
-}
-console.log(result)
-
-let x=5
-let result1=0;
-while(x < 20 ){
-    console.log(x)
-    x=x+5;
-}
-
-for(let i=0; i< 10; i++){
-    console.log(i)
-}
-```
-
-```
-do{}while()
-for(let i = 0 ; i < 10 ; i ++ ){}
-while
-```
-
-```
-for each...in
-for...in
-for...of
-for await...of
-```
-
-```
-break
-continue
-```
 
 ## أنماط برمجية
 
@@ -288,6 +388,13 @@ console.log(x[1])
 ```
 let x =["a","b","c","d","e","f"]
 console.log(x.length)
+```
+
+```
+for each...in
+for...in
+for...of
+for await...of
 ```
 
 ### مثال السوق 
