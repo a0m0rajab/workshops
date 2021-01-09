@@ -1,2 +1,3 @@
+# to build GitHub Pages properly
 exclude: 
-  - introToJS/23_workshop.md
+  - markdown
