@@ -24,15 +24,9 @@ quote}}
     - [اختيار مفتاحي](#اختيار-مفتاحي)
   - [الحلقات](#الحلقات)
   - [الدوال](#الدوال)
-  - [أنماط برمجية](#أنماط-برمجية)
-  - [مصفوفات](#مصفوفات)
     - [مثال السوق](#مثال-السوق)
-  - [مكتبات جاهزة](#مكتبات-جاهزة)
-  - [الرياضيات](#الرياضيات-1)
-  - [الصفوف](#الصفوف)
   - [تدريب](#تدريب)
     - [رسم مثلث](#رسم-مثلث)
-  - [مراجعة الأخطاء وأنواعها](#مراجعة-الأخطاء-وأنواعها)
   - [بعض الإضافات](#بعض-الإضافات)
 
 ## الطباعة على الشاشة
@@ -100,9 +94,6 @@ console.log(1+2)
 console.log(4*5)
 ```
 
-```
-console.log()
-```
 
 ## إشارات التعريف
 
@@ -115,6 +106,14 @@ console.log()
 -=
 ```
 
+
+```
+let x =1
+x += 1
+console.log(x) 
+x *= 4
+```
+
 منطقية 
 
 ```
@@ -124,13 +123,12 @@ console.log()
 ^= عدم تطابق
 |= أو
 ```
-
-هياكل بيانات
 ```
-[a, b] = [1, 2]
-{a, b} = {a:1, b:2}
+let x = 1 
+console.log(x)
+x &= 0
+console.log(x)
 ```
-
 ## تصاعد وتنازل
 
 ```
@@ -299,7 +297,8 @@ swtich(){
     default:
 }
 ```
-
+```
+```
 
 ## الحلقات
 
@@ -363,40 +362,6 @@ function multiplier(x){
 }
 ```
 
-```
-GeneratorFunction
-AsyncGeneratorFunction
-Generator
-AsyncGenerator
-AsyncFunction
-Promise
-```
-
-## أنماط برمجية
-
-```
-Map
-Set
-```
-
-## مصفوفات
-
-```
-let x =["a","b","c","d","e","f"]
-console.log(x[1])
-```
-```
-let x =["a","b","c","d","e","f"]
-console.log(x.length)
-```
-
-```
-for each...in
-for...in
-for...of
-for await...of
-```
-
 ### مثال السوق 
 
 خوارزمية الشكلاطة
@@ -424,67 +389,6 @@ console.log("موجود")
 }
 }
 
-```
-
-## مكتبات جاهزة
-
-
-```
-Math
-Date
-```
-
-
-Math 
-
-```
-with
-
-console.log(
-Math.cos(Math.PI),
-Math.sin(Math.PI),
-Math.PI
-)
-```
-
-## الرياضيات 
-
-[القاعدة العامة](../extras/index.html)
-
-معادلة درجة ثانية
-
-x^2 + 4x + 4 = 0  
-
-```
-function delta(a,b,c){
-    return Math.sqrt((b*b)-(4*a*c))
-}
-```
-x^2 + 4x + 4 = 0 
-
-ماذا إن كانت النتيجة بالسالب؟
-```
-function quadraticZero(a,b,c){
-    return -b/2*a
-}
-
-function quadraticMinus(a,b,c){
-    return -b/2*a
-}
-
-function quadraticPlus(a,b,c){
-    return -b/2*a
-}
-```
-
-## الصفوف
-
-```
-Class
-debugger
-export
-import
-label
 ```
 
 ## تدريب
@@ -533,13 +437,6 @@ if}}
 
 
 hint}}
-
-## مراجعة الأخطاء وأنواعها
-
-```
-throw
-try...catch
-```
 
 
 ## بعض الإضافات
