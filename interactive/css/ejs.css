@@ -459,3 +459,19 @@ sub {
 sup {
   font-size: 70%;
 }
+/* RTL */
+
+body {
+    direction: rtl;
+}
+pre.snippet.cm-s-default{
+    direction: ltr;
+}
+
+div.solution:before {
+    content: "» أظهر التلميح...";
+}
+
+pre.sandbox-output-log {
+    direction: ltr;
+}
