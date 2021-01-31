@@ -3,7 +3,7 @@
 
 {{quote {author: "الرسول محمد صلى الله عليه وسلم"}
 
-سلُوا اللهَ علمًا نافعًا، وتَعَوَّذُوا باللهِ منْ علمٍ لا ينفعُ
+إذَا مَاتَ ابنُ آدَمَ انقَطَعَ عمَلُهُ إلاَّ من ثَلاثٍ صَدَقَةٍ جَارِيَةٍ أو عِلمٍ يُنتَفَعُ بِهِ أو وَلَدٍ صَالِحٍ يَدعُو لَهُ
 
 quote}}
 
@@ -27,6 +27,20 @@ quote}}
     - [مثال السوق](#مثال-السوق)
   - [تدريب](#تدريب)
     - [رسم مثلث](#رسم-مثلث)
+  - [هياكل بيانات](#هياكل-بيانات)
+  - [المصفوفات](#المصفوفات)
+    - [forEach](#foreach)
+    - [for of](#for-of)
+    - [For in](#for-in)
+  - [الخرائط](#الخرائط)
+  - [المجموعات](#المجموعات)
+  - [تعريف آخر](#تعريف-آخر)
+  - [مكتبات جاهزة](#مكتبات-جاهزة)
+    - [Math](#math)
+    - [Date](#date)
+    - [دوال داخلية](#دوال-داخلية)
+  - [الصفوف](#الصفوف)
+  - [مراجعة الأخطاء وأنواعها](#مراجعة-الأخطاء-وأنواعها)
   - [بعض الإضافات](#بعض-الإضافات)
 
 ## الطباعة على الشاشة
@@ -157,6 +171,14 @@ Function
 Null    
 ```
 
+```
+let h = undefined
+let t = true 
+let x = "Hello"
+let n = Null
+let b = function (x) {return x*2}
+let ob = {h:1,b:2}
+```
 التغيير بين الأنواع
 ميزات كل نوع
 
@@ -166,7 +188,19 @@ Number // -(2^53 − 1) and 2^53 − 1).
 ```
 
 ```
+let x = 2 
+let b = 0/0
+let mi= -100/0
+let pl= 100/0
+```
+
+```
 BigInt
+```
+
+```
+console.log(Number.MAX_VALUE)
+// console.log(BigInt(Number.MAX_VALUE))
 ```
 
 ```
@@ -287,7 +321,7 @@ true,false
 ### اختيار مفتاحي
 
 ```
-swtich(){
+switch(){
     case x:
         retrun;
     case y:
@@ -437,6 +471,186 @@ if}}
 
 
 hint}}
+
+
+## هياكل بيانات
+
+```
+Array:Index
+Map:Key-Value 
+Set:Only one.
+```
+
+## المصفوفات
+
+```
+let x =["a","b","c","d","e","f"]
+console.log(x[1])
+```
+
+```
+let x =["a","b","c","d","e","f"]
+console.log(x.length)
+```
+
+### forEach 
+
+```
+let ulama = ["ibn haytham" , "omar khayyam" , "al-battani" , "Al-harezmi" , "ibn-sina" , "ibn-nafis"]
+ulama.forEach(element => console.log(element));
+```
+
+### for of
+
+
+```
+const Books = ['Book of Optics', 'Rubaiyat', `Kitab Al-Zij al-Sabi’`, "Algebra", `The Canon of Medicine` , `Al-Shamil fi al-Tibb`];
+for (const element of Books) {
+  console.log(element);
+}
+```
+
+### For in
+
+
+```
+const scholarAndArea = { `ibn haytham`: `Optics`, `al-kharezmi`: `Algebra`, `ibn-sina`: `Medics` };
+
+for (const property in scholarAndArea) {
+  console.log(`${property}: ${objecscholarAndAreat[property]}`);
+}
+```
+
+## الخرائط
+
+```
+let cities = new Map()
+```
+
+```
+let cities = new Map()
+cities.set('Sudan', "Khartom")
+cities.has('Sudan') // true
+cities.get('Jordan') // undefined
+cities.set('Jordan', "Oman")
+cities.get('Jordan') // "Oman"
+cities.delete('Syria') // false
+cities.delete('Sudan') // true
+console.log(cities.size) // 1
+```
+
+
+
+## المجموعات
+
+```
+let myBooks = new Set()
+```
+
+```
+let myBooks = new Set()
+mySet.add("Sherlock")
+mySet.add("Tantawi")
+mySet.add("ibn Battuta")
+mySet.add("Ali Omari")
+mySet.add("Sherlock")
+mySet.has("Sherlock")
+mySet.delete("Sherlock")
+mySet.size
+```
+
+##  تعريف آخر
+
+```
+[a, b] = [1, 2]
+{a, b} = {a:1, b:2}
+```
+
+
+
+## مكتبات جاهزة
+
+
+```
+Math
+Date
+```
+
+
+### Math 
+
+```
+console.log(
+Math.cos(Math.PI),
+Math.sin(Math.PI),
+Math.PI
+)
+```
+
+```
+var a, x, y;
+var r = 10;
+
+with (Math) {
+  a = PI * r * r;
+  x = r * cos(PI);
+  y = r * sin(PI / 2);
+}
+
+console.log(a,x,y)
+```
+
+### Date
+
+```
+let h = new Date
+console.log(h)
+```
+
+### دوال داخلية
+
+```
+getDate()
+getDay()
+getFullYear()
+getHours()
+getMilliseconds()
+getMinutes()
+getMonth()
+getSeconds()
+```
+
+
+## الصفوف
+
+```
+Class
+debugger
+export
+import
+label
+```
+
+
+## مراجعة الأخطاء وأنواعها
+
+```
+throw
+try...catch
+```
+
+
+```
+GeneratorFunction
+AsyncGeneratorFunction
+Generator
+AsyncGenerator
+AsyncFunction
+Promise
+```
+
+Binary Numbers
+https://stackoverflow.com/questions/2803145/is-there-0b-or-something-similar-to-represent-a-binary-number-in-javascript
 
 
 ## بعض الإضافات
