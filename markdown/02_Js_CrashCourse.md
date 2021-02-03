@@ -39,8 +39,11 @@ quote}}
     - [Math](#math)
     - [Date](#date)
     - [دوال داخلية](#دوال-داخلية)
-  - [الصفوف](#الصفوف)
+  - [الصفوف/الأصناف](#الصفوفالأصناف)
   - [مراجعة الأخطاء وأنواعها](#مراجعة-الأخطاء-وأنواعها)
+  - [الوحدات](#الوحدات)
+  - [المولدات](#المولدات)
+  - [الوعود](#الوعود)
   - [بعض الإضافات](#بعض-الإضافات)
 
 ## الطباعة على الشاشة
@@ -358,6 +361,7 @@ for(let i=0; i< 10; i++){
 ```
 break
 continue
+Label
 ```
 
 ```
@@ -621,45 +625,222 @@ getSeconds()
 ```
 
 
-## الصفوف
+## الصفوف/الأصناف
 
 ```
 Class
-debugger
-export
-import
-label
 ```
 
+```
+class Rectangle {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+    // Getter
+  get area() {
+    return this.calcArea();
+  }
+  // Method
+  calcArea() {
+    return this.height * this.width;
+  }
+}
+let x = new Rectangle(10,20)
+console.log(x.area())
+```
+
+```
+class Rectangle {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+    // Getter
+  get area() {
+    return this.calcArea();
+  }
+  // Method
+  calcArea() {
+    return this.height * this.width;
+  }
+}
+
+Class Square extends Rectangle{
+    constructor(size){
+        super(size,size)
+    }
+}
+```
 
 ## مراجعة الأخطاء وأنواعها
 
+1- أخطاء منطقية
+2- أخطاء تعريفية
+3- أخطاء أثناء العمل
+
+
 ```
-throw
+debugger
 try...catch
+throw
+Error
+```
+
+```
+nonExistentFunction();
+```
+
+```
+try {
+  nonExistentFunction();
+} catch (error) {
+  console.error(error);
+}
+```
+
+```
+try {
+  throw "لم يتم كتابة الرقم"
+} catch (error) {
+  console.error(error);
+}
+```
+
+```
+let x = new Error("تعلم من أخطائك")
 ```
 
 
 ```
+class CustomError extends Error {
+  constructor(place, ...params) {
+    super(...params)
+    if (Error.captureStackTrace) {
+      Error.captureStackTrace(this, CustomError)
+    }
+    this.name = 'CustomError'
+    this.place = place
+    this.date = new Date()
+  }
+}
+
+try {
+  throw new CustomError('مكان الخطأ', 'أعد المحاولة!')
+} catch(e) {
+  console.error(e.name)    //CustomError
+  console.error(e.place)     
+  console.error(e.message) 
+  console.error(e.stack)   
+}
+```
+
+## الوحدات
+
+type="module"
+
+```
+export
+import
+```
+
+```
+export const name = 'square';
+
+export function draw( length, x, y, color) {
+  return {
+    length: length,
+    x: x,
+    y: y,
+    color: color
+  };
+}
+```
+
+```
+export { name, draw, reportArea, reportPerimeter };
+```
+
+```
+import { name, draw, reportArea, reportPerimeter } from './modules/square.js';
+```
+
+## المولدات
+
+```
+Generator
 GeneratorFunction
 AsyncGeneratorFunction
-Generator
 AsyncGenerator
-AsyncFunction
-Promise
 ```
 
-Binary Numbers
-https://stackoverflow.com/questions/2803145/is-there-0b-or-something-similar-to-represent-a-binary-number-in-javascript
+```
+function* generator() {
+  yield 1;
+  yield 2;
+  yield 3;
+}
+const gen = generator(); 
+console.log(gen.next().value); 
+console.log(generator().next().value); 
+console.log(generator().next().value); 
+```
+
+```
+function* infinite() {
+    let index = 0;
+
+    while (true) {
+        yield index++;
+    }
+}
+
+const generator = infinite(); 
+console.log(generator.next().value); 
+console.log(generator.next().value); 
+console.log(generator.next().value); 
+```
+
+## الوعود
+
+```
+Promise
+AsyncFunction
+```
+
+```
+const CallServer = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('You have done.');
+  }, 300);
+});
+
+CallServer.then((value) => {
+  console.log(value);
+});
+
+console.log(CallServer);
+```
+
+```
+const CallServer = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('You have done.');
+  }, 300);
+});
+
+async function asyncCall() {
+  console.log('calling');
+  const result = await CallServer();
+  console.log(result);
+}
+
+asyncCall()
+```
 
 
 ## بعض الإضافات
+
 [مصدر موثوق للقراءة](https://developer.mozilla.org/en-US/)
-
-[جدول المصطلحات](../extras/index.html)
-
-[الآلي](../robot/index.html)
-
 [أنواع البيانات](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
-
 [مصدر](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)
