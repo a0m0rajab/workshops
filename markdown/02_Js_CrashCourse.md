@@ -23,22 +23,22 @@ quote}}
     - [ثنائية](#ثنائية)
     - [اختيار مفتاحي](#اختيار-مفتاحي)
   - [الحلقات](#الحلقات)
-  - [الدوال](#الدوال)
-    - [مثال السوق](#مثال-السوق)
-  - [تدريب](#تدريب)
-    - [رسم مثلث](#رسم-مثلث)
   - [هياكل بيانات](#هياكل-بيانات)
   - [المصفوفات](#المصفوفات)
-    - [forEach](#foreach)
-    - [for of](#for-of)
-    - [For in](#for-in)
+    - [لكل عنصر](#لكل-عنصر)
+    - [لكل عنصر من](#لكل-عنصر-من)
+    - [لكل عنصر في المجموعة](#لكل-عنصر-في-المجموعة)
   - [الخرائط](#الخرائط)
   - [المجموعات](#المجموعات)
   - [تعريف آخر](#تعريف-آخر)
+  - [الدوال](#الدوال)
   - [مكتبات جاهزة](#مكتبات-جاهزة)
     - [Math](#math)
     - [Date](#date)
     - [دوال داخلية](#دوال-داخلية)
+    - [مثال السوق](#مثال-السوق)
+  - [تدريب](#تدريب)
+    - [عدد أولي](#عدد-أولي)
   - [الصفوف/الأصناف](#الصفوفالأصناف)
   - [مراجعة الأخطاء وأنواعها](#مراجعة-الأخطاء-وأنواعها)
   - [الوحدات](#الوحدات)
@@ -324,14 +324,20 @@ true,false
 ### اختيار مفتاحي
 
 ```
+let name = "أحمد"
 switch(){
-    case x:
-        retrun;
-    case y:
-        return: 
-    case f:
-        return 
+    case "أحمد":
+          console.log("أحمد شحص خلوص")
+        break;
+    case "محمود":
+          console.log("مفعول")
+        break; 
+    case "محمد":
+          console.log("محمد قدوة يحتذى بها")
+        break;
     default:
+      console.log("الاسم غير معرف")
+
 }
 ```
 ```
@@ -340,22 +346,9 @@ switch(){
 ## الحلقات
 
 ```
-let result =0;
-for(let i=5; i< 20; i=i+1){
-    result = i + result;
-}
-console.log(result)
-
-let x=5
-let result1=0;
-while(x < 20 ){
-    console.log(x)
-    x=x+5;
-}
-
-for(let i=0; i< 10; i++){
-    console.log(i)
-}
+for(){}
+while(){}
+do{}while()
 ```
 
 ```
@@ -365,116 +358,44 @@ Label
 ```
 
 ```
-do{}while()
-for(let i = 0 ; i < 10 ; i ++ ){}
-while
+for(let i=0; i< 10; i++){
+    console.log(i)
+}
 ```
 
-
-## الدوال
-
 ```
-function sum(x,y,z){
-    return x+y+z 
-}
-
-function average(x,y,z){
-    return (x+y+z)/3
-}
-
-
-function smaller(x,y){
-    if(x<y){
-        return x;
-    }else {
-        return y
+let result =0;
+for(let i=1; i< 20; i=i+1){
+    if(x%2 == 0 ){
+      console.log(i)
     }
 }
+console.log(result)
 ```
 
 ```
-function multiplier(x){
-    return function (y){
-        return y * x
+let x=0
+let result1=0;
+while(x < 150 ){
+    if(x%5 == 0){
+      x++
     }
 }
-```
-
-### مثال السوق 
-
-خوارزمية الشكلاطة
-```{lang: "java"}
-اذهب للمتجر
-ابحث عن الشكلاطة 
-اشتري الذي تحتاجه 
+console.log(x)
 ```
 
 ```
-let req="شكلاطة"
-let avai=[
-"شعيرية",
-"لحم",
-"بصل",
-"بقدونس",
-"خيار",
-"خس",
-"بطاطا",
-"شكلاطة"
-]
-for (let i = 0; i < avai.length ; i= i+1){
-if(avai[i]==req){
-console.log("موجود")
+let result = 0;
+for(let i = 0 ; i < 100 ; i ++ ){
+  result += i;
 }
-}
-
+console.log(result)
 ```
 
-## تدريب
-
-### رسم مثلث
-
-{{index "triangle (exercise)"}}
-
-اكتب ((حلقة)) تستدعي
-`console.log`
-سبع مرات لرسم المثلث في الأسفل
-
-
-```{lang: null}
-#
-##
-###
-####
-#####
-######
-#######
 ```
-
-{{index [string, length]}}
-
-
-{{if interactive
-
-
-
+let n = 100
+console.log((n*(n+1))/2)
 ```
-// برنامجك هنا
-```
-if}}
-
-{{hint
-
-{{index "triangle (exercise)"}}
-
-يمكنك البدأ ببرنامج يطبع الأرقام من 1 إلى 7 ومن ثم يمكنك التعديل على البرنامج
-يمكن القيام بهذا من خلال التعديل على البرنامج السابق في قسم الحلقات من الملف
-[أمثلة الحلقات](#الحلقات)
-
-يمكنك الآن التفكير بالعلاقة بين الأرقام والرسم (المربع) يمكنك ان تضيف على النتيجة الخاصة بك 
-مربع لكي يقوم بزيادتاه على الشكل التالي (`+= "#"`) بهذا الشكل يمكن أن يبسط حلك ويشبه النماذج في التدريب يمكنك التفكير من خلال  [أنواع البيانات](#أنواع_البيانات)
-
-
-hint}}
 
 
 ## هياكل بيانات
@@ -488,24 +409,28 @@ Set:Only one.
 ## المصفوفات
 
 ```
-let x =["a","b","c","d","e","f"]
-console.log(x[1])
+let ulama = ["ibn haytham" , "omar khayyam" , "al-battani" , "Al-harezmi" , "ibn-sina" , "ibn-nafis"]
+console.log(ulama[1])
+console.log(ulama.length)
 ```
 
-```
-let x =["a","b","c","d","e","f"]
-console.log(x.length)
-```
 
-### forEach 
+### لكل عنصر
+
+```
+ForEach
+```
 
 ```
 let ulama = ["ibn haytham" , "omar khayyam" , "al-battani" , "Al-harezmi" , "ibn-sina" , "ibn-nafis"]
 ulama.forEach(element => console.log(element));
 ```
 
-### for of
+### لكل عنصر من
 
+```
+for..of
+```
 
 ```
 const Books = ['Book of Optics', 'Rubaiyat', `Kitab Al-Zij al-Sabi’`, "Algebra", `The Canon of Medicine` , `Al-Shamil fi al-Tibb`];
@@ -513,15 +438,17 @@ for (const element of Books) {
   console.log(element);
 }
 ```
+### لكل عنصر في المجموعة
 
-### For in
-
+```
+for..in
+```
 
 ```
 const scholarAndArea = { `ibn haytham`: `Optics`, `al-kharezmi`: `Algebra`, `ibn-sina`: `Medics` };
 
 for (const property in scholarAndArea) {
-  console.log(`${property}: ${objecscholarAndAreat[property]}`);
+  console.log(`${property}: ${scholarAndAreat[property]}`);
 }
 ```
 
@@ -542,7 +469,6 @@ cities.delete('Syria') // false
 cities.delete('Sudan') // true
 console.log(cities.size) // 1
 ```
-
 
 
 ## المجموعات
@@ -570,7 +496,34 @@ mySet.size
 {a, b} = {a:1, b:2}
 ```
 
+## الدوال
 
+```
+function multiple2(x){
+    return x*2
+}
+
+function halfOf(x){
+    return x/2
+}
+
+const scholarAndArea = { `ibn haytham`: `Optics`, `al-kharezmi`: `Algebra`, `ibn-sina`: `Medics` };
+
+function find(field,map){
+for (const property in scholarAndArea) {
+  if(scholarAndAreat[property] == field)
+    return property
+}
+}
+```
+
+```
+function multiplier(x){
+    return function (y){
+        return y * x
+    }
+}
+```
 
 ## مكتبات جاهزة
 
@@ -584,9 +537,17 @@ Date
 ### Math 
 
 ```
+function degToRad(degrees) {
+  return Number.parseInt(degrees * (Math.PI / 180));
+};
+
+function radToDeg(rad) {
+  return Number.parseInt(rad / (Math.PI / 180));
+};
+
 console.log(
-Math.cos(Math.PI),
-Math.sin(Math.PI),
+Math.cos(degToRad(Math.PI)),
+Math.sin(degToRad(Math.PI)),
 Math.PI
 )
 ```
@@ -623,6 +584,72 @@ getMinutes()
 getMonth()
 getSeconds()
 ```
+
+
+### مثال السوق 
+
+ما معنى الخوارزميات؟ 
+
+خوارزمية انتهاء الصلاحية
+```{lang: "java"}
+اذهب للمنتج
+ابحث تاريخ الصلاحية 
+احسب كل منتج
+دون العدد
+```
+
+```
+let avai=[
+2010,
+2015,
+2000,
+2021,
+2100,
+1914,
+2023,
+1453
+]
+let year = new Date().getFullYear()
+let count = 0;
+for (let i = 0; i < avai.length ; i= i+1){
+if(avai[i] <  year){
+count ++ }
+}
+console.log(count)
+
+```
+
+## تدريب
+
+### عدد أولي
+
+{{index "triangle (exercise)"}}
+
+اكتب دالة تتأكد من كون العدد أولي أم لا! 
+
+
+{{index [string, length]}}
+
+
+{{if interactive
+
+```
+// برنامجك هنا
+```
+if}}
+
+{{hint
+
+{{index "triangle (exercise)"}}
+
+يمكنك البدأ بالتفكير بقاعدة العدد الأولي وهي أن لا يقسم إلى على نفسه والواحد. 
+لكي تتأكد من القسمة يمكن أن تستخدم إشارة النسبة المئوية والتي تعني باقي القسمة في البرمجة من خلالها تستطيع معرفة إن كان العدد أولي. 
+
+يمكنك استخدام
+[أمثلة الحلقات](#الحلقات)
+للدوران على جميع الأعداد بين 2 والعدد المطلوب للتأكد من  قابلية القسمة في حال قبل القسمة على أي عدد آخر فهو غير أولي. 
+
+hint}}
 
 
 ## الصفوف/الأصناف
@@ -676,7 +703,9 @@ Class Square extends Rectangle{
 ## مراجعة الأخطاء وأنواعها
 
 1- أخطاء منطقية
+
 2- أخطاء تعريفية
+
 3- أخطاء أثناء العمل
 
 
@@ -842,5 +871,7 @@ asyncCall()
 ## بعض الإضافات
 
 [مصدر موثوق للقراءة](https://developer.mozilla.org/en-US/)
+
 [أنواع البيانات](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
+
 [مصدر](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)
